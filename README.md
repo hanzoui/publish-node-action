@@ -1,6 +1,6 @@
 # publish-node-action
 
-Uses [comfy-cli](https://github.com/Comfy-Org/comfy-cli) to publish the current version of your custom node to the [registry](https://comfyregistry.org). The goal is to create an easy way for developers to publish updates to their custom node to the registry.
+Uses [hanzo-cli](https://github.com/hanzoui/cli) to publish the current version of your custom node to the [registry](https://comfyregistry.org). The goal is to create an easy way for developers to publish updates to their custom node to the registry.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Create a secret called `REGISTRY_ACCESS_TOKEN`.
 The easiest way to publish custom node versions is to use this Github Actions workflow that runs everytime `pyproject.toml` changes. When you want to publish a new version, simply go and update the version field to the next version.
 
 ```yaml
-name: Publish to Comfy registry
+name: Publish to hanzo registry
 on:
   workflow_dispatch:
   push:
@@ -48,14 +48,14 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Publish Custom Node
-        uses: Comfy-Org/publish-node-action@main
+        uses: hanzoui/publish-node-action@main
         with:
           personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }} ## Add your own personal access token to your Github Repository secrets and reference it here.
 ```
 
 ### Notes
 
-`comfy-cli` will publish the version written in `pyproject.toml`.
+`hanzo-cli` will publish the version written in `pyproject.toml`.
 
 Make sure you update this before running the Github Action.
 

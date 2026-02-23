@@ -18,10 +18,10 @@ runs:
       uses: actions/setup-python@v5
       with:
           python-version: '3.10'
-    - name: Install comfy-cli
+    - name: Install hanzo-cli
       shell: bash
       run: |
-          pip install comfy-cli
+          pip install hanzo-cli
     - name: Publish Node
       shell: bash
       run: |
